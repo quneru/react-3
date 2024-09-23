@@ -1,0 +1,63 @@
+<html>
+  <body>
+    <div id="app"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel Script -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
+      const domNode = document.getElementById('app');
+
+      function Link({link}) {
+        console.log(link);
+        return <a>{link ? link : "りんく"}</a>;
+      }
+
+      function Logo({logo}) {
+        return <h2>{logo ? logo : "ろご"}</h2>;
+      }
+
+      function Title({title}) {
+        return <h2>{title ? title : "たいとる"}</h2>;
+      }
+
+      function Nav({nav}) {
+        return <div>
+          <h2>{nav ? nav : "なび"}</h2>
+          <Link link="いんく"/>
+          <Link link="たんく"/>
+          <Link link="もんく"/>
+        </div>;
+      }
+
+      function Header({header}) {
+        return <div>
+          <h1>{header ? header : 'へっだ'}</h1>
+          <Logo logo="ぽこ"/>
+          <Title title="ばいとる"/>
+          <Nav nav="たび"/>
+        </div>;
+      }
+
+      function Article({article}) {
+        return <h1>{article ? article : "あーてぃくる"}</h1>;
+      }
+      
+      function Footer({footer}) {
+        return <h1>{footer ? footer : "ふったー"}</h1>;
+      }   
+
+      function HomePage() {
+
+        return <div>
+          <Header header="はらへった"/>
+          <Article article="きゅーてぃくる"/>
+          <Footer footer="ぶった"/>
+        </div>;
+      }
+
+      const root = ReactDOM.createRoot(domNode);
+      root.render(<HomePage/>);
+    </script>
+  </body>
+</html>
